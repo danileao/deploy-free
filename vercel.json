@@ -1,15 +1,21 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "src/server.ts",
-      "use": "@vercel/node"
+    "version": 2,
+    "builds": [
+        {
+            "src": "index.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "index.js"
+        }
+    ],
+    "env": {
+        "NOME_DA_VARIAVEL": "@nome_da_variavel"
+    },
+    "engines": {
+        "node": "14.x"
     }
-  ],
-  "routes": [
-    {
-      "src": "(.*)",
-      "dest": "src/server.ts"
-    }
-  ]
 }
